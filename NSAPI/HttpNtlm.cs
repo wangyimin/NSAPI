@@ -30,7 +30,7 @@ namespace NSAPI
                             if (phase == 1)
                             {
                                 if (!auth.Any(el => el.Scheme.Equals("NTLM")))
-                                    throw new InvalidOperationException("Only WwwAuthenticate NTLM is supported,");
+                                    throw new InvalidOperationException("Only WwwAuthenticate NTLM is supported.");
 
                                 client.Init(null, out clientToken);
                                 req.Add("Authorization", "NTLM " + Convert.ToBase64String(clientToken));
